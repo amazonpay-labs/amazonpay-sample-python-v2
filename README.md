@@ -68,7 +68,7 @@ def generate_signature_for_GET_API() :
     string_to_sign = get_to_string_to_sign(canonical_request)
 
     # Calculating the Signature
-    signature = get_siganture(string_to_sign, private_key)
+    signature = get_signature(string_to_sign, private_key)
 
     # Printing the HTTP Headers
     print_http_headers(accept, amz_pay_date, public_key, signed_headers, signature, '', '')
@@ -103,7 +103,7 @@ generate_signature_for_GET_API()
     string_to_sign = get_to_string_to_sign(canonical_request)
 
     # Calculating the Signature
-    signature = get_siganture(string_to_sign, private_key)
+    signature = get_signature(string_to_sign, private_key)
 
     # Printing the HTTP Headers
     print_http_headers(accept, amz_pay_date, public_key, signed_headers, signature, idempotencyKey, content_type)

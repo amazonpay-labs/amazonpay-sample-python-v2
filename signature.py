@@ -15,18 +15,18 @@ def get_date_time() :
     t = datetime.datetime.utcnow()
     return t.strftime('%Y%m%dT%H%M%SZ')
 def get_to_string_to_sign(canonical_request) :
-    return 'AMZN-PAY-RSASSA-PSS' + '\n' + hex_and_hash(canonical_request)
+    return 'AMZN-PAY-RSASSA-PSS-V2' + '\n' + hex_and_hash(canonical_request)
 def get_signature(string_to_sign, private_key) :
      # Calculating the Signature
     digest = SHA256.new(string_to_sign.encode('utf-8'))
-    signer = PKCS1_PSS.new(private_key, None, 20)
+    signer = PKCS1_PSS.new(private_key, None, 32)
     return base64.b64encode(signer.sign(digest))
 def print_http_headers(accept, amz_pay_date, public_key, signed_headers, signature, idempotencyKey, content_type) :
     # Printing the HTTP Headers
     print('Generated HTTP Headers :')
     print('accept : ' + accept)
     print('x-amz-pay-date : ' + amz_pay_date)
-    print('authorization : ' + 'AMZN-PAY-RSASSA-PSS PublicKeyId=' + public_key + ', ' +  'SignedHeaders=' + signed_headers + ', ' + 'Signature=' + signature.decode())
+    print('authorization : ' + 'AMZN-PAY-RSASSA-PSS-V2 PublicKeyId=' + public_key + ', ' +  'SignedHeaders=' + signed_headers + ', ' + 'Signature=' + signature.decode())
     if(idempotencyKey != '') :
         print('x-amz-pay-idempotency-key : ' + idempotencyKey)
     if(content_type != '') :

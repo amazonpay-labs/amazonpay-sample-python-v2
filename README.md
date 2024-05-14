@@ -119,7 +119,7 @@ Please check the [testrun.pl](https://github.com/amazonpay-labs/amazonpay-sample
 Generated HTTP Headers :
 accept : application/json
 x-amz-pay-date : 20211001T121153Z
-authorization : AMZN-PAY-RSASSA-PSS PublicKeyId=PUBLIC_KEY, SignedHeaders=accept;content-type;x-amz-pay-date;x-amz-pay-idempotency-key, Signature=C5jR6a+ZCLkSwHBzBQocnq+dujL8To+HEgpH7jWVU95e56M8onZZH78Sspm1zIuSggRZDTtmUmPxJg/w4tY5XIeLHDjAGB+I5FDwlBdUScuD+0F9E8h2xrJUTS2L0zsc5VIAvlvgsGQtznTJc/3zWutNyZn169SEaJm6Yma6c7U=
+authorization : AMZN-PAY-RSASSA-PSS-V2 PublicKeyId=PUBLIC_KEY, SignedHeaders=accept;content-type;x-amz-pay-date;x-amz-pay-idempotency-key, Signature=C5jR6a+ZCLkSwHBzBQocnq+dujL8To+HEgpH7jWVU95e56M8onZZH78Sspm1zIuSggRZDTtmUmPxJg/w4tY5XIeLHDjAGB+I5FDwlBdUScuD+0F9E8h2xrJUTS2L0zsc5VIAvlvgsGQtznTJc/3zWutNyZn169SEaJm6Yma6c7U=
 x-amz-pay-idempotency-key : dc849a72e7194353a544579c905e20b6
 content-type : application/json
 
